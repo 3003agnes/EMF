@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/age.of.scala/src" modelPluginID="age.of.scala"
+    modelName="Base" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>base.ecore</foreignModel>
+  <genPackages prefix="Emf" disposableProviderFactory="true" ecorePackage="base.ecore#/">
+    <nestedGenPackages prefix="Gebaeude" disposableProviderFactory="true" ecorePackage="base.ecore#//Gebaeude">
+      <genClasses image="false" ecoreClass="base.ecore#//Gebaeude/Gebaeude">
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute base.ecore#//Gebaeude/Gebaeude/information"/>
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute base.ecore#//Gebaeude/Gebaeude/name"/>
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute base.ecore#//Gebaeude/Gebaeude/bild"/>
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute base.ecore#//Gebaeude/Gebaeude/kategorie"/>
+        <genOperations ecoreOperation="base.ecore#//Gebaeude/Gebaeude/benoetigteBauRessourcen"/>
+      </genClasses>
+      <genClasses ecoreClass="base.ecore#//Gebaeude/Wohngebaeude">
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute base.ecore#//Gebaeude/Wohngebaeude/anzahlSiedler"/>
+      </genClasses>
+      <genClasses ecoreClass="base.ecore#//Gebaeude/LagerGebaeude">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute base.ecore#//Gebaeude/LagerGebaeude/kapazitaet"/>
+      </genClasses>
+      <genClasses ecoreClass="base.ecore#//Gebaeude/ProduzierendesGebaeude">
+        <genOperations ecoreOperation="base.ecore#//Gebaeude/ProduzierendesGebaeude/getInputProSekunde"/>
+        <genOperations ecoreOperation="base.ecore#//Gebaeude/ProduzierendesGebaeude/getOutputProSekunde"/>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Enum" disposableProviderFactory="true" ecorePackage="base.ecore#//Enum">
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="base.ecore#//Enum/GebaeudeEnum">
+        <genEnumLiterals ecoreEnumLiteral="base.ecore#//Enum/GebaeudeEnum/Rathaus"/>
+        <genEnumLiterals ecoreEnumLiteral="base.ecore#//Enum/GebaeudeEnum/Holzfäller"/>
+        <genEnumLiterals ecoreEnumLiteral="base.ecore#//Enum/GebaeudeEnum/Sägewerk"/>
+        <genEnumLiterals ecoreEnumLiteral="base.ecore#//Enum/GebaeudeEnum/Steinmetz"/>
+        <genEnumLiterals ecoreEnumLiteral="base.ecore#//Enum/GebaeudeEnum/Wohnhaus"/>
+        <genEnumLiterals ecoreEnumLiteral="base.ecore#//Enum/GebaeudeEnum/Lager"/>
+        <genEnumLiterals ecoreEnumLiteral="base.ecore#//Enum/GebaeudeEnum/Fischer"/>
+        <genEnumLiterals ecoreEnumLiteral="base.ecore#//Enum/GebaeudeEnum/Jäger"/>
+      </genEnums>
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="base.ecore#//Enum/RessourcenEnum">
+        <genEnumLiterals ecoreEnumLiteral="base.ecore#//Enum/RessourcenEnum/Holz"/>
+        <genEnumLiterals ecoreEnumLiteral="base.ecore#//Enum/RessourcenEnum/Stein"/>
+        <genEnumLiterals ecoreEnumLiteral="base.ecore#//Enum/RessourcenEnum/Gold"/>
+        <genEnumLiterals ecoreEnumLiteral="base.ecore#//Enum/RessourcenEnum/Nahrung"/>
+        <genEnumLiterals ecoreEnumLiteral="base.ecore#//Enum/RessourcenEnum/Eisen"/>
+        <genEnumLiterals ecoreEnumLiteral="base.ecore#//Enum/RessourcenEnum/Kohle"/>
+        <genEnumLiterals ecoreEnumLiteral="base.ecore#//Enum/RessourcenEnum/Siedler"/>
+      </genEnums>
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="base.ecore#//Enum/KategorieScoreEnum">
+        <genEnumLiterals ecoreEnumLiteral="base.ecore#//Enum/KategorieScoreEnum/A"/>
+        <genEnumLiterals ecoreEnumLiteral="base.ecore#//Enum/KategorieScoreEnum/B"/>
+        <genEnumLiterals ecoreEnumLiteral="base.ecore#//Enum/KategorieScoreEnum/C"/>
+      </genEnums>
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="base.ecore#//Enum/GebaeudeInformation">
+        <genEnumLiterals ecoreEnumLiteral="base.ecore#//Enum/GebaeudeInformation/Kostet"/>
+        <genEnumLiterals ecoreEnumLiteral="base.ecore#//Enum/GebaeudeInformation/Produziert"/>
+        <genEnumLiterals ecoreEnumLiteral="base.ecore#//Enum/GebaeudeInformation/Betriebskosten"/>
+        <genEnumLiterals ecoreEnumLiteral="base.ecore#//Enum/GebaeudeInformation/Typ"/>
+        <genEnumLiterals ecoreEnumLiteral="base.ecore#//Enum/GebaeudeInformation/Kategorie"/>
+        <genEnumLiterals ecoreEnumLiteral="base.ecore#//Enum/GebaeudeInformation/Information"/>
+      </genEnums>
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="base.ecore#//Enum/ResultEnum">
+        <genEnumLiterals ecoreEnumLiteral="base.ecore#//Enum/ResultEnum/GebäudeErstellt"/>
+        <genEnumLiterals ecoreEnumLiteral="base.ecore#//Enum/ResultEnum/GebäudeEntfernt"/>
+        <genEnumLiterals ecoreEnumLiteral="base.ecore#//Enum/ResultEnum/GebäudeNichtVorhanden"/>
+        <genEnumLiterals ecoreEnumLiteral="base.ecore#//Enum/ResultEnum/ZuWenigRessource"/>
+      </genEnums>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="RessourcenContainer" disposableProviderFactory="true"
+        ecorePackage="base.ecore#//RessourcenContainer">
+      <genClasses ecoreClass="base.ecore#//RessourcenContainer/RessourcenContainer">
+        <genOperations ecoreOperation="base.ecore#//RessourcenContainer/RessourcenContainer/getRessource">
+          <genParameters ecoreParameter="base.ecore#//RessourcenContainer/RessourcenContainer/getRessource/typ"/>
+        </genOperations>
+        <genOperations ecoreOperation="base.ecore#//RessourcenContainer/RessourcenContainer/addRessource">
+          <genParameters ecoreParameter="base.ecore#//RessourcenContainer/RessourcenContainer/addRessource/typ"/>
+          <genParameters ecoreParameter="base.ecore#//RessourcenContainer/RessourcenContainer/addRessource/anzahl"/>
+        </genOperations>
+        <genOperations ecoreOperation="base.ecore#//RessourcenContainer/RessourcenContainer/minusRessource">
+          <genParameters ecoreParameter="base.ecore#//RessourcenContainer/RessourcenContainer/minusRessource/typ"/>
+          <genParameters ecoreParameter="base.ecore#//RessourcenContainer/RessourcenContainer/minusRessource/anzahl"/>
+        </genOperations>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Ressource" disposableProviderFactory="true" ecorePackage="base.ecore#//Ressource">
+      <genClasses ecoreClass="base.ecore#//Ressource/Ressource">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute base.ecore#//Ressource/Ressource/typ"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute base.ecore#//Ressource/Ressource/anzahl"/>
+      </genClasses>
+    </nestedGenPackages>
+  </genPackages>
+</genmodel:GenModel>

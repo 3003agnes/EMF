@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="emf" nsURI="http:/www.vogella.de/base/emf/" nsPrefix="emf">
+  <eSubpackages name="Gebaeude" nsURI="http:/www.vogella.de/base/emf/Gebaeude/" nsPrefix="Gebaeude">
+    <eClassifiers xsi:type="ecore:EClass" name="Gebaeude" abstract="true">
+      <eOperations name="benoetigteBauRessourcen" eType="#//RessourcenContainer/RessourcenContainer"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="information" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          changeable="false"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="#//Enum/GebaeudeEnum"
+          changeable="false"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="bild" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EByteArray"
+          changeable="false"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="kategorie" eType="#//Enum/KategorieScoreEnum"
+          changeable="false"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Wohngebaeude" eSuperTypes="#//Gebaeude/Gebaeude">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="anzahlSiedler" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+          changeable="false"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="LagerGebaeude" eSuperTypes="#//Gebaeude/Gebaeude">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="kapazitaet" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ProduzierendesGebaeude" eSuperTypes="#//Gebaeude/Gebaeude">
+      <eOperations name="getInputProSekunde" lowerBound="1" upperBound="-1" eType="#//Ressource/Ressource"/>
+      <eOperations name="getOutputProSekunde" lowerBound="1" upperBound="-1" eType="#//Ressource/Ressource"/>
+    </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="Enum" nsURI="http:/www.vogella.de/base/emf/Enum/" nsPrefix="Enum">
+    <eClassifiers xsi:type="ecore:EEnum" name="GebaeudeEnum">
+      <eLiterals name="Rathaus" literal="Rathaus"/>
+      <eLiterals name="Holzfäller" value="1" literal="Holzfäller"/>
+      <eLiterals name="Sägewerk" value="2" literal="Sägewerk"/>
+      <eLiterals name="Steinmetz" value="3" literal="Steinmetz"/>
+      <eLiterals name="Wohnhaus" value="4" literal="Wohnhaus"/>
+      <eLiterals name="Lager" value="5" literal="Lager"/>
+      <eLiterals name="Fischer" value="6"/>
+      <eLiterals name="Jäger" value="7" literal="Jäger"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="RessourcenEnum">
+      <eLiterals name="Holz" literal="Holz"/>
+      <eLiterals name="Stein" value="1" literal="Stein"/>
+      <eLiterals name="Gold" value="2" literal="Gold"/>
+      <eLiterals name="Nahrung" value="3" literal="Nahrung"/>
+      <eLiterals name="Eisen" value="4" literal="Eisen"/>
+      <eLiterals name="Kohle" value="5" literal="Kohle"/>
+      <eLiterals name="Siedler" value="6" literal="Siedler"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="KategorieScoreEnum">
+      <eLiterals name="A"/>
+      <eLiterals name="B" value="1"/>
+      <eLiterals name="C" value="2"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="GebaeudeInformation">
+      <eLiterals name="Kostet" literal="Kostet"/>
+      <eLiterals name="Produziert" value="1" literal="Produziert"/>
+      <eLiterals name="Betriebskosten" value="2" literal="Betriebskosten"/>
+      <eLiterals name="Typ" value="3" literal="Typ"/>
+      <eLiterals name="Kategorie" value="4" literal="Kategorie"/>
+      <eLiterals name="Information" value="5" literal="Information"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="ResultEnum">
+      <eLiterals name="GebäudeErstellt" literal="GebäudeErstellt"/>
+      <eLiterals name="GebäudeEntfernt" value="1" literal="GebäudeEntfernt"/>
+      <eLiterals name="GebäudeNichtVorhanden" value="2" literal="GebäudeNichtVorhanden"/>
+      <eLiterals name="ZuWenigRessource" value="3" literal="ZuWenigRessource"/>
+    </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="RessourcenContainer" nsURI="http:/www.vogella.de/base/emf/RessourcenContainer/"
+      nsPrefix="RessourcenContainer">
+    <eClassifiers xsi:type="ecore:EClass" name="RessourcenContainer">
+      <eOperations name="getRessource" eType="#//Ressource/Ressource">
+        <eParameters name="typ" eType="#//Enum/RessourcenEnum"/>
+      </eOperations>
+      <eOperations name="addRessource" eType="#//RessourcenContainer/RessourcenContainer">
+        <eParameters name="typ" eType="#//Enum/RessourcenEnum"/>
+        <eParameters name="anzahl" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      </eOperations>
+      <eOperations name="minusRessource" eType="#//RessourcenContainer/RessourcenContainer">
+        <eParameters name="typ" eType="#//Enum/RessourcenEnum"/>
+        <eParameters name="anzahl" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      </eOperations>
+    </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="Ressource" nsURI="http:/www.vogella.de/base/emf/Ressource/"
+      nsPrefix="Ressource">
+    <eClassifiers xsi:type="ecore:EClass" name="Ressource">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="typ" eType="#//Enum/RessourcenEnum"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="anzahl" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eClassifiers>
+  </eSubpackages>
+</ecore:EPackage>
