@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated base -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="emf.Gebaeude.presentation.GebaeudeModelWizardID"
+            name="%_UI_GebaeudeModelWizard_label"
+            class="emf.Gebaeude.presentation.GebaeudeModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/GebaeudeModelFile.gif">
+         <description>%_UI_GebaeudeModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated base -->
+      <editor
+            id="emf.Gebaeude.presentation.GebaeudeEditorID"
+            name="%_UI_GebaeudeEditor_label"
+            icon="icons/full/obj16/GebaeudeModelFile.gif"
+            extensions="gebaeude"
+            class="emf.Gebaeude.presentation.GebaeudeEditor"
+            contributorClass="emf.Gebaeude.presentation.GebaeudeActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated base -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="emf.RessourcenContainer.presentation.RessourcenContainerModelWizardID"
+            name="%_UI_RessourcenContainerModelWizard_label"
+            class="emf.RessourcenContainer.presentation.RessourcenContainerModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/RessourcenContainerModelFile.gif">
+         <description>%_UI_RessourcenContainerModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated base -->
+      <editor
+            id="emf.RessourcenContainer.presentation.RessourcenContainerEditorID"
+            name="%_UI_RessourcenContainerEditor_label"
+            icon="icons/full/obj16/RessourcenContainerModelFile.gif"
+            extensions="ressourcencontainer"
+            class="emf.RessourcenContainer.presentation.RessourcenContainerEditor"
+            contributorClass="emf.RessourcenContainer.presentation.RessourcenContainerActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated base -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="emf.Ressource.presentation.RessourceModelWizardID"
+            name="%_UI_RessourceModelWizard_label"
+            class="emf.Ressource.presentation.RessourceModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/RessourceModelFile.gif">
+         <description>%_UI_RessourceModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated base -->
+      <editor
+            id="emf.Ressource.presentation.RessourceEditorID"
+            name="%_UI_RessourceEditor_label"
+            icon="icons/full/obj16/RessourceModelFile.gif"
+            extensions="ressource"
+            class="emf.Ressource.presentation.RessourceEditor"
+            contributorClass="emf.Ressource.presentation.RessourceActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>
